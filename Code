@@ -1,0 +1,33 @@
+def calculate_change(paid,price):
+  change=paid-price
+  return change
+
+ticket_price=30
+print(f"Your ticket price is {ticket_price} cents.")
+
+total_inserted=0
+coins_inserted=0
+
+while True:
+  coin=int(input("insert a coin either 1,5,10, or 25 cent\n"))
+
+  if coin not in (1,5,10,25):
+    print("Invalid coin, please try again!\n")
+    continue
+
+  total_inserted+=coin
+  coins_inserted+=1
+  print(f"Inserted {coin}. The total now is {total_inserted}.")
+
+  if total_inserted>=ticket_price:
+    print("You have inserted enough Money!\n")
+    change=total_inserted-ticket_price
+    print(f"You're change is {change} cents.")
+    break
+
+print("===================Payment Summary===================\n")
+print(f"Ticket Price:{ticket_price}")
+print(f"Coins Inserted: {coins_inserted}")
+print(f"Total Paid: {total_inserted}")
+print(f"Change Given: {change}")
+print("=======================================================")
